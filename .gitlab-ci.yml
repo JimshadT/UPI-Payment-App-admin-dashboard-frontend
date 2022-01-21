@@ -1,0 +1,22 @@
+
+image:
+  name: node:14.17
+stages:
+  - deploy-production
+Deploy-Production:
+  stage: deploy-production   #specify the stage given in stages:
+  only:
+    - main #for testing branch only
+  tags:
+    - nft-store-dashboard #runner tag. entered as projectname in runner-register.yml
+  script:
+    - apt-get update
+    - npm install
+    - npm run build
+    - cp -R build/. /public/
+
+  allow_failure: false
+  environment: #specify the environment name. This will be visible at Gitlab project => sidebar => Operations => Environments
+    name: production
+
+

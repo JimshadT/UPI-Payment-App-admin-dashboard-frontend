@@ -27,7 +27,7 @@ export const generateUpdateInputs = () => {
             label: "email",
             type: "text",
             //placeHolder: "Enter email ID",
-            visibility: true,
+            visibility: false,
         },
     ];
     return inputs;

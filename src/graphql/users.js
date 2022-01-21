@@ -27,7 +27,7 @@ export const CREATE_NEW_USER = `mutation ($username: String!, $mobile:String, $e
 }
 `;
 
-export const UPDATE_USER = `mutation ($id:String! $username: String!, $email: String!) {
+export const UPDATE_USER = `mutation ($id:String! $username: String!, $email: String) {
   update_user(_id:$id username: $username, email: $email) {
     message
   }
@@ -47,6 +47,7 @@ export const LIST_TRANSACTIONS = `query {
         username
         email
       }
+      upi_id
       transaction_amount
       after_balance
       before_balance
@@ -63,12 +64,15 @@ export const TRANSACTION_DETAILS = `query ($transaction_id:String!){
         _id
         email
         username
+        mobile
       }
       to_user{
         _id
         email
         username
+        mobile
       }
+      upi_id
       transaction_id
       transaction_amount
       before_balance

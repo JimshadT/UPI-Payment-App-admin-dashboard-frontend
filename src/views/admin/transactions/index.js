@@ -17,13 +17,14 @@ const useStyles = makeStyles(componentStyles);
 function Transactions() {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const { usersData, showViewMore } = useSelector(
+
+    const { transactionData, showViewMore } = useSelector(
         ({
             users: {
                 users: { list, showViewMore },
             },
         }) => ({
-            usersData: list,
+            transactionData: list,
             showViewMore,
         })
     );
@@ -45,18 +46,19 @@ function Transactions() {
                         },
                         { title: "Transaction id", field: "transaction_id" },
                         { 
-                            title: "From User", 
+                            title: "Sender", 
                             field: "from_user",
                             render:(rowData)=> <p>{rowData?.from_user?.username}</p> 
                         },
                         { 
-                            title: "Recipient User", 
+                            title: "Recipient", 
                             field: "to_user",
-                            render:(rowData)=> <p>{rowData?.to_user?.username}</p>
+                            render:(rowData)=> <p>{rowData?.to_user?rowData?.to_user?.username:rowData?.upi_id}</p>
                         },
                         { title: "Amount", field: "transaction_amount" },
                     ]}
-                    data={usersData}
+                    data={transactionData}
+                    
                 />
             </Container>
         </>

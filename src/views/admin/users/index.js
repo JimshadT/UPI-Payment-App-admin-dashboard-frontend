@@ -64,12 +64,9 @@ function Users() {
                 <CustomTable
                     title="Users"
                     columns={[
-                        { title: "Actions", render:(rawdata)=> <div><CustomIconButton 
+                        { title: "Actions", render:(rawdata)=> <CustomIconButton 
                         title="Update User" icon={<Edit/>} size="small" variant="outlined"
-                        onClick={()=>updateButton(rawdata)}/>
-                        <CustomIconButton 
-                        title="Delete User" icon={<Delete/>} size="small" variant="outlined"
-                        onClick={""}/></div>},
+                        onClick={()=>updateButton(rawdata)}/>},
                         { title: "UserName", field: "username" },
                         { title: "Email", field: "email" },
                         { title: "Mobile", field: "mobile" },
