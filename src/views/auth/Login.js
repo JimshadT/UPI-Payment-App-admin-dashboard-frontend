@@ -56,8 +56,8 @@ function Login() {
                     <CardContent classes={{ root: classes.cardContent }}>
                         <Formik
                             initialValues={{
-                                email: "admin1@gmail.com",
-                                password: "12345",
+                                email: "admin@test.com",
+                                password: "Admin@123",
                             }}
                             validationSchema={Yup.object().shape({
                                 email: Yup.string().email("Must be a valid email").max(255).required("Email is required"),
