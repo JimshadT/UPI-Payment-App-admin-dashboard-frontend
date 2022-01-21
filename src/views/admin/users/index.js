@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import { Container, Box, Grid } from "@material-ui/core";
-import { PersonAdd,Delete,Edit } from "@material-ui/icons";
+import { PersonAdd,Edit } from "@material-ui/icons";
 // core components
 import CustomHeader from "components/Headers/CustomHeader";
 
@@ -12,7 +12,7 @@ import CustomTable from "components/CustomTable/CustomTable";
 import CustomIconButton from "components/CustomButton/CustomIconButton";
 import CustomSidebar from "components/CustomSidebar/CustomSidebar";
 import { toggleSidebar } from "store/actions";
-import { validationSchema, initialValues, handleSingleUserCreation } from "./CreateSingleUser";
+import { validationSchema, initialValues, handleSingleUserCreation,generateCreateInputs } from "./CreateSingleUser";
 import { initialUserValues,handleSingleUserUpdation,generateUpdateInputs } from "./UpdateUser";
 import { listUsers } from "store/actions";
 
@@ -78,7 +78,7 @@ function Users() {
             <CustomSidebar
             
                 title={addnew?"Add User":"Update User"}
-                inputs={generateUpdateInputs()}
+                inputs={addnew?generateCreateInputs():generateUpdateInputs()}
                 validationSchema={validationSchema}
                 initialValues={addnew?initialValues:initialUserValues(userData)}
                 handleSubmit={addnew?handleSingleUserCreation:handleSingleUserUpdation}

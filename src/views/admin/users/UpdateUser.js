@@ -1,4 +1,3 @@
-import * as Yup from "yup";
 import { store } from "store/store";
 import { toggleSidebar, updateUser } from "store/actions";
 
@@ -13,7 +12,6 @@ export const generateUpdateInputs = () => {
             name: "username",
             label: "UserName",
             type: "text",
-            //placeHolder: "Enter name",
             visibility: true,
         },
         {
@@ -26,7 +24,6 @@ export const generateUpdateInputs = () => {
             name: "email",
             label: "email",
             type: "text",
-            //placeHolder: "Enter email ID",
             visibility: false,
         },
     ];

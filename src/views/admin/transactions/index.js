@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Box, Grid } from "@material-ui/core";
+import { Container, Box } from "@material-ui/core";
 // core components
 import CustomHeader from "components/Headers/CustomHeader";
 
